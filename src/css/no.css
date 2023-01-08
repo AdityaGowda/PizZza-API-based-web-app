@@ -9,11 +9,6 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-@media only screen and (max-width: 61.25em) {
-  html {
-    font-size: 50%;
-  }
-}
 
 body {
   font-family: "Nunito Sans", sans-serif;
@@ -23,10 +18,7 @@ body {
   background-image: linear-gradient(to right bottom, #252ced, #f48982);
   background-size: cover;
   background-repeat: no-repeat;
-
- 
 }
-
 .container {
   position: fixed;
   left: 30%;
@@ -36,19 +28,10 @@ body {
   overflow-x: scroll;
   background-color: #fff;
   border-radius: 9px;
-  box-shadow: 0 2rem 6rem 0.5rem rgba(97, 85, 81, 0.2);
 }
 .container::-webkit-scrollbar {
   display: none;
 }
-@media only screen and (max-width: 78.15em) {
-  .container {
-    max-width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-}
-
 .btn--small, .btn--small:link, .btn--small:visited, .btn {
   background-image: linear-gradient(to right bottom, #f27373, #f48982);
   border-radius: 10rem;
@@ -71,7 +54,7 @@ body {
 }
 
 .btn {
-  padding: 1.5rem 4rem;
+  padding: 1.5rem 2rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -122,7 +105,6 @@ body {
 .btn--inline:focus {
   outline: none;
 }
-
 .btn--round {
   background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
   border-radius: 50%;
@@ -175,7 +157,6 @@ body {
 .btn--tiny:not(:last-child) {
   margin-right: 0.3rem;
 }
-
 .heading--2 {
   font-size: 2rem;
   font-weight: 700;
@@ -184,7 +165,6 @@ body {
   margin-bottom: 2.5rem;
   text-align: center;
 }
-
 @-webkit-keyframes rotate {
   0% {
     transform: rotate(0);
@@ -193,7 +173,6 @@ body {
     transform: rotate(360deg);
   }
 }
-
 @keyframes rotate {
   0% {
     transform: rotate(0);
@@ -204,12 +183,11 @@ body {
 }
 .message,
 .error {
-  background: rgb(249, 232, 232);
+  background: rgb(254, 239, 239);
   position:absolute;
-  top:30%;
   left:20%;
   max-width: 40rem;
-  margin-top:110px ;
+  margin-top:230px;
   padding: 40px 20px 40px 20px;
   display: flex;
   align-items: center;
@@ -241,11 +219,11 @@ body {
   right: 0%;
   left: 0%;
   z-index: 12;
-  padding: 20px;
+  padding: 14px;
 }
 .header__logo {
 margin-left: 3.5rem;
-font-size: 4rem;
+font-size: 3rem;
 font-weight: 600;
 color: #d54b4b;
 font-family:'Merriweather', serif;;
@@ -259,56 +237,32 @@ font-family:'Merriweather', serif;;
   border-radius: 10rem;
   display: flex;
   align-items: center;
-  padding-left: 3rem;
   transition: all 0.3s;
 }
-.search:focus-within {
-  transform: translateY(-2px);
-  box-shadow: 0 0.7rem 3rem rgba(97, 85, 81, 0.08);
-}
+  .search:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 3rem rgba(97, 85, 81, 0.08);
+  }
 .search__field {
   border: none;
   background: none;
   font-family: inherit;
-  font-size: 1.7rem;
-  width: 400px;
+  font-size: 1.5rem;
   padding-left:50px ;
 }
 .search__field:focus {
   outline: none;
 }
-.search__field::-moz-placeholder {
-  color: #d3c7c3;
-}
-.search__field:-ms-input-placeholder {
-  color: #d3c7c3;
-}
-.search__field::placeholder {
-  color: #d3c7c3;
-}
-@media only screen and (max-width: 61.25em) {
-  .search__field {
-    width: auto;
-  }
-  .search__field::-moz-placeholder {
-    color: white;
-  }
-  .search__field:-ms-input-placeholder {
-    color: white;
-  }
-  .search__field::placeholder {
-    color: white;
-  }
-}
 .search-results{
   display: block;
-  position:fixed;
+  position:absolute;
   top: 10%;
   bottom: 0%;
   left: 0%;
   width: 30%;
   background: rgb(250, 246, 247);
   z-index: 10;
+  border: 1px solid black;
  
 }
 .results::-webkit-scrollbar {
@@ -357,10 +311,15 @@ font-family:'Merriweather', serif;;
   align-items: center;
 margin-left: 30px;
 }
-
+#namebookmarks{
+  display: block;
+}
+#namesearch{
+  display: block;
+}
 .nav__btn svg {
-  height: 25px;
-  width:25px;
+  height: 30px;
+  width:30px;
   fill:rgb(221, 69, 69) ;
   margin-right: 0.7rem;
   transform: translateY(-1px);
@@ -373,7 +332,6 @@ margin-left: 30px;
 }
 
 .bookmarks {
-  padding: 1rem 0;
   position: absolute;
   right: -2.5rem;
   z-index: 10;
@@ -406,7 +364,7 @@ margin-left: 30px;
 .preview__link:link, .preview__link:visited {
   display: flex;
   align-items: center;
-  padding: 1.5rem 3.5rem 1.5rem 4rem;
+  padding: 1rem;
   transition: all 0.3s;
   border-right: 1px solid rgb(245, 235, 235);
   text-decoration: none;
@@ -499,9 +457,11 @@ margin-left: 30px;
   position: fixed;
   bottom: 0%;
   right: 0%;
+  top: 12%;
 }
 
 .results {
+
   list-style: none;
   margin-bottom: 2rem;
   overflow: scroll;
@@ -513,6 +473,9 @@ margin-left: 30px;
 .recipe {
   background-color: #f9f5f3;
   z-index: 8;
+  position: absolute;
+  width: 100%;
+ 
 }
 .recipe__fig {
   margin-top: 30px;
@@ -520,17 +483,7 @@ margin-left: 30px;
   position: relative;
   transform-origin: top;
 }
-.recipe__fig::before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(to right bottom, #fce2e2, #f16767);
-  opacity: 0.6;
-}
+
 .recipe__img {
   width: 100%;
   display: block;
@@ -556,11 +509,6 @@ margin-left: 30px;
   box-decoration-break: clone;
   padding: 1.3rem 2rem;
   background-image: linear-gradient(to right bottom, #b18382, #ee1515);
-}
-@media only screen and (max-width: 61.25em) {
-  .recipe__title {
-    width: 70%;
-  }
 }
 .recipe__details {
   display: flex;
@@ -660,4 +608,90 @@ margin-left: 30px;
 }
 .recipe__publisher {
   font-weight: 700;
+}
+
+@media screen and (max-width:1321px) {
+  .search__field{
+    width: 150px;
+  }
+  .nav__item0{
+    margin-left: 30px;
+  }
+  .nav__btn{
+    margin-left: 0px;
+  }
+  #namebookmarks{
+    display: none;
+  }
+  .nav__btn svg{
+    height: 25px;
+    width:25px;
+    margin-left: 30px;
+  }
+  .search-results{
+    top:10%;
+  }
+}
+
+@media screen and (max-width:900px){
+  .btn{
+    padding:0.5rem 1rem;
+  }
+  .search__field{
+  width:100px;
+  }
+  .search{
+    margin-left: 30px;
+  }
+  .nav__item0 svg{
+    margin: 0px;
+    font-size: 3rem;
+  }
+  #namesearch{
+    display: none;
+  }
+  .header__logo{
+    margin-left: 0.7rem;
+    font-size: 1.8rem;
+  }
+  .recipe__title {
+    width:50%;
+    padding: auto;
+  }
+  .message,.error{
+    padding: 20px 20px 20px 20px;
+    top:40%;
+    right:15%;
+
+  }
+  .header{
+    padding: 10px;
+  }
+ .search-results{
+  padding-top: 0%;
+ }
+.preview__link{
+  padding: 1rem;
+}
+.preview__title{
+  font-size: 1rem;
+}
+.preview__publisher{
+  font-size: 0.7rem;
+}
+.search-results{
+  width: 35%;
+  top: 9%;
+}
+.recipe{
+  left: 7%;
+  right: 0%;
+}
+.recipe__title span{
+  padding: 0%;
+}
+.recipe__title{
+  font-size: 3rem;
+  line-height: 1.2;
+}
 }
